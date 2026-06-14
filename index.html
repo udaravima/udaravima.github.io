@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Udaravima | Systems & Strategy</title>
+    <!-- Tailwind CSS for rapid, utility-first layout -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        terminal: {
+                            bg: '#0a0e14',
+                            text: '#b3b1ad',
+                            accent: '#ffb454',
+                            meta: '#59c2e6',
+                            success: '#7fd962'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: monospace; }
+        .glitch-hover:hover { text-shadow: 2px 0 #ffb454, -2px 0 #59c2e6; }
+    </style>
+</head>
+<body class="bg-terminal-bg text-terminal-text min-h-screen selection:bg-terminal-accent selection:text-terminal-bg">
+
+    <!-- Top Navigation / Status Bar -->
+    <header class="border-b border-gray-800 sticky top-0 bg-terminal-bg/80 backdrop-blur z-50 px-6 py-4">
+        <div class="max-w-5xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <span class="w-3 h-3 rounded-full bg-terminal-success animate-pulse"></span>
+                <a href="#" class="text-xl font-bold text-white tracking-wider glitch-hover">UDARAVIMA //</a>
+            </div>
+            <nav class="hidden md:flex space-x-8 text-sm">
+                <a href="#manifesto" class="hover:text-terminal-accent transition-colors">./manifesto</a>
+                <a href="#domains" class="hover:text-terminal-accent transition-colors">./domains</a>
+                <a href="#projects" class="hover:text-terminal-accent transition-colors">./projects</a>
+                <a href="#stack" class="hover:text-terminal-accent transition-colors">./telemetry</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-12 space-y-24">
+
+        <!-- Hero Section: The System Init -->
+        <section id="manifesto" class="space-y-6 pt-12">
+            <div class="text-xs text-terminal-meta uppercase tracking-widest">[ system_init: complete ]</div>
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight">
+                Engineering across layers. <br>
+                <span class="text-terminal-accent">First-principles execution.</span>
+            </h1>
+            <p class="text-lg max-w-2xl text-gray-400 leading-relaxed">
+                I map complex abstractions down to bare metal. From low-level memory architectures and automated telemetry pipelines to highly resilient system designs, I build software that scales horizontally without losing structural integrity vertically.
+            </p>
+            <div class="pt-4 flex space-x-4">
+                <a href="#projects" class="bg-transparent border border-terminal-accent text-terminal-accent hover:bg-terminal-accent hover:text-terminal-bg px-6 py-2 rounded font-bold transition-all text-sm">
+                    Inspect Subsystems
+                </a>
+                <a href="https://github.com/udaravima" target="_blank" class="border border-gray-700 hover:border-gray-500 px-6 py-2 rounded text-sm transition-all">
+                    stdout (GitHub)
+                </a>
+            </div>
+        </section>
+
+        <hr class="border-gray-800">
+
+        <!-- Domain Fluidity Engine (Interactive) -->
+        <section id="domains" class="space-y-8">
+            <div>
+                <h2 class="text-2xl font-bold text-white mb-2">./domains</h2>
+                <p class="text-sm text-gray-400">Click a target node to reconfigure the perspective matrix.</p>
+            </div>
+
+            <!-- Dynamic Toggles -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                <button onclick="switchDomain('embedded')" id="btn-embedded" class="domain-btn p-3 border border-terminal-accent bg-terminal-accent/10 text-white text-left text-sm font-bold rounded transition-all">
+                    01. Low-Level / Embedded
+                </button>
+                <button onclick="switchDomain('devops')" id="btn-devops" class="domain-btn p-3 border border-gray-800 text-gray-500 text-left text-sm font-bold rounded transition-all hover:border-gray-700">
+                    02. DevOps / CI-CD
+                </button>
+                <button onclick="switchDomain('qa')" id="btn-qa" class="domain-btn p-3 border border-gray-800 text-gray-500 text-left text-sm font-bold rounded transition-all hover:border-gray-700">
+                    03. QA Automation
+                </button>
+                <button onclick="switchDomain('architecture')" id="btn-architecture" class="domain-btn p-3 border border-gray-800 text-gray-500 text-left text-sm font-bold rounded transition-all hover:border-gray-700">
+                    04. Architecture / R&D
+                </button>
+            </div>
+
+            <!-- Context Display -->
+            <div class="bg-gray-900/40 border border-gray-800 p-6 rounded relative overflow-hidden min-h-[160px]">
+                <div id="domain-content" class="space-y-3">
+                    <!-- Default content loaded via JS -->
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-gray-800">
+
+        <!-- Projects / Case Studies -->
+        <section id="projects" class="space-y-8">
+            <h2 class="text-2xl font-bold text-white">./projects</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                
+                <!-- Project 1 -->
+                <div class="border border-gray-800 p-6 rounded hover:border-gray-700 transition-all flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center text-xs text-terminal-meta">
+                            <span>[Subsystem Node Alpha]</span>
+                            <span>Active</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Custom Linux Kernel Orchestration</h3>
+                        <p class="text-sm text-gray-400"> Stripping distributions down to their absolute primitives to maximize throughput on custom ARM SoCs. Optimized boot times by 40% via strategic module pruning.</p>
+                    </div>
+                    <div class="mt-6 flex flex-wrap gap-2 text-xs text-terminal-accent">
+                        <span>#C</span> <span>#Kernel-Space</span> <span>#ARM Assembly</span>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="border border-gray-800 p-6 rounded hover:border-gray-700 transition-all flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center text-xs text-terminal-meta">
+                            <span>[Subsystem Node Beta]</span>
+                            <span>Deployed</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Deterministic CI/CD Hardware Loop</h3>
+                        <p class="text-sm text-gray-400">Created a custom runner infrastructure that physicalizes software testing, cross-compiling code and deploying it directly onto testing rigs automatically.</p>
+                    </div>
+                    <div class="mt-6 flex flex-wrap gap-2 text-xs text-terminal-accent">
+                        <span>#Docker</span> <span>#GitHubActions</span> <span>#Python</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <hr class="border-gray-800">
+
+        <!-- System Telemetry / Modern Skill Matrix -->
+        <section id="stack" class="space-y-6">
+            <h2 class="text-2xl font-bold text-white">./telemetry</h2>
+            <div class="bg-gray-900/20 border border-gray-800 rounded p-6">
+                <table class="w-full text-left text-sm">
+                    <thead>
+                        <tr class="border-b border-gray-800 text-terminal-meta">
+                            <th class="pb-3 font-bold">Layer</th>
+                            <th class="pb-3 font-bold">Strategy & Focus</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-800/50">
+                        <tr>
+                            <td class="py-3 font-bold text-white">L0: Hardware / Kernel</td>
+                            <td class="py-3 text-gray-400">Hardware-software co-design, assembly translation, interface registers.</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 font-bold text-white">L1: Infrastructure</td>
+                            <td class="py-3 text-gray-400">Declarative deployment loops, ephemeral testing architecture, artifact caching.</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 font-bold text-white">L2: Application Logic</td>
+                            <td class="py-3 text-gray-400">High-performance abstractions, idiomatic design patterns, zero-leak runtimes.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="border-t border-gray-800 py-8 text-center text-xs text-gray-500">
+        <p>Executed flawlessly. Built from first principles. &copy; 2026</p>
+    </footer>
+
+    <!-- Interactive Domain Switcher Logic -->
+    <script>
+        const domainData = {
+            embedded: {
+                title: "Low-Level & Embedded Engineering",
+                desc: "Where software collides with physics. I design systems that communicate with hardware over raw buses, bypass bloated OS abstractions when performance demands it, and treat memory as a precious, highly allocated resource."
+            },
+            devops: {
+                title: "DevOps & Infrastructure-as-Code",
+                desc: "Treating infrastructure like compiler design. I build high-availability pipelines where environment creation is entirely deterministic, testing setups are ephemeral, and state transitions are auditable."
+            },
+            qa: {
+                title: "Architectural QA Automation",
+                desc: "Testing isn't an afterthought; it's a design constraint. I implement automated test harnesses that act as cryptographic proofs of system stability—finding edge-case failures before they hit production environments."
+            },
+            architecture: {
+                title: "High-Level Architecture & R&D",
+                desc: "Connecting isolated domains. Whether abstracting low-level peripheral logs into distributed cloud metrics or applying compiler-level optimizations to high-level application models, I build cohesive ecosystem pipelines."
+            }
+        };
+
+        function switchDomain(domainKey) {
+            // Update Text Content
+            const contentDiv = document.getElementById('domain-content');
+            const data = domainData[domainKey];
+            
+            contentDiv.innerHTML = `
+                <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                    <span class="text-terminal-accent">&gt;</span> ${data.title}
+                </h3>
+                <p class="text-sm text-gray-400 leading-relaxed max-w-3xl">${data.desc}</p>
+            `;
+
+            // Update Active Button Styling
+            document.querySelectorAll('.domain-btn').forEach(btn => {
+                btn.classList.remove('border-terminal-accent', 'bg-terminal-accent/10', 'text-white');
+                btn.classList.add('border-gray-800', 'text-gray-500');
+            });
+
+            const activeBtn = document.getElementById(`btn-${domainKey}`);
+            activeBtn.classList.remove('border-gray-800', 'text-gray-500');
+            activeBtn.classList.add('border-terminal-accent', 'bg-terminal-accent/10', 'text-white');
+        }
+
+        // Initialize with default view
+        switchDomain('embedded');
+    </script>
+</body>
+</html>
